@@ -1,18 +1,17 @@
-import { createContext, useState } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useState, useContext } from 'react';
 
-// 1. Creamos el contexto (El tubo de comunicación)
-export const CartContext = createContext();
+// 1. Creamos el contexto pero NO lo exportamos (se vuelve privado)
+const CartContext = createContext();
 
-// 2. Creamos el Proveedor (El componente que envuelve a la app)
+// 2. Exportamos el Proveedor (El componente que envuelve a la app)
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]); // Iniciamos con el carrito vacío
+  const [cart, setCart] = useState([]);
 
-  // Función para agregar un producto
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
 
-  // Función para vaciar el carrito (opcional para el botón de compra)
   const clearCart = () => {
     setCart([]);
   };
@@ -22,4 +21,16 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
+};
+
+// 3. Creamos y exportamos un Custom Hook para consumir el contexto
+export const useCart = () => {
+  const context = useContext(CartContext);
+
+  // Buena práctica: Prevenir errores si intentan usar el carrito fuera del proveedor
+  if (context === undefined) {
+    throw new Error('useCart debe ser utilizado dentro de un CartProvider');
+  }
+
+  return context;
 };
