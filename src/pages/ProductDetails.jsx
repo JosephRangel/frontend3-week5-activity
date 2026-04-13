@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { CartContext } from '../context/CartContext'; // Importamos el cerebro global
+import { useCart } from '../context/CartContext'; // Importamos el cerebro global
 
 const ProductDetails = () => {
   // 1. EL PARÁMETRO: Atrapamos el ID de la URL (ej. /product/5)
@@ -12,7 +12,7 @@ const ProductDetails = () => {
   const [error, setError] = useState(null);
 
   // 3. EL ESTADO GLOBAL: Extraemos la función para agregar al carrito
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCart();
 
   // 4. EL EFECTO: Descargamos solo este producto
   useEffect(() => {
