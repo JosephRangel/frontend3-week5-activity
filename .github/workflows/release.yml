@@ -62,7 +62,7 @@ jobs:
       - name: Construir y empujar imagen de Docker
         run: |
           VERSION=${{ needs.release.outputs.new_release_version }}
-          DOCKER_REPO="${{ secrets.DOCKER_USERNAME }}/proyecto-frontend-ii"
+          DOCKER_REPO="${{ secrets.DOCKER_USERNAME }}/proyecto-frontend-iii"
 
           echo "Construyendo imagen $DOCKER_REPO:$VERSION..."
 
