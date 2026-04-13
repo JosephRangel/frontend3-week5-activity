@@ -9,10 +9,12 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
+    alert('¡Producto agregado al carrito!')
     setCart([...cart, product]);
   };
 
   const clearCart = () => {
+    alert('¡Carrito vaciado!')
     setCart([]);
   };
 
