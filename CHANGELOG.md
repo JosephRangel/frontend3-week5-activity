@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/JosephRangel/frontend3-week5-activity/compare/v1.1.0...v1.2.0) (2026-04-13)
+
+
+### Features
+
+* Add vercel config to avoid unnecessary deployments ([#5](https://github.com/JosephRangel/frontend3-week5-activity/issues/5)) ([dfd59f0](https://github.com/JosephRangel/frontend3-week5-activity/commit/dfd59f0b586814c0b71f9fa41abcfad40e2c35af))
+
 # [1.1.0](https://github.com/JosephRangel/frontend3-week5-activity/compare/v1.0.1...v1.1.0) (2026-04-13)
 
 
